@@ -1,0 +1,39 @@
+{
+  "name": "Masonry Image Viewer",
+  "short_name": "",
+  "theme_color": "black",
+  "background_color": "black",
+  "start_url": "./",
+  "id": "Masonry_Image_Viewer",
+  "display": "standalone",
+  "scope": "./",
+  "icons": [
+    {
+      "src": "512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "form_factor": "wide"
+    }
+  ],
+  "description": "",
+  "categories": ["photo"]
+}
