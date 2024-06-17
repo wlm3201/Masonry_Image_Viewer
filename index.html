@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>瀑布流图片浏览器</title>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="black" />
+    <meta name="description" content="Masonry Imgage Viewer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="app.webmanifest" />
+  </head>
+  <body>
+    <div id="hint">点击或拖入图片文件夹</div>
+    <div id="cursorplace"></div>
+    <div id="imgbox"></div>
+    <div id="indicator"></div>
+    <div id="cover" tabindex="1">
+      <button id="previmg" class="floatbtn">&lt;</button>
+      <button id="nextimg" class="floatbtn">&gt;</button>
+    </div>
+    <button class="floatbtn" id="treebtn">&gt;</button>
+    <button class="floatbtn" id="sidebtn">+</button>
+    <button class="scrollbtn" id="toend"></button>
+    <button class="scrollbtn" id="totop"></button>
+    <div id="treebar">
+      <div id="dirtree"><ul></ul></div>
+      <div id="resizebar"></div>
+    </div>
+    <div id="sidebar">
+      <div>列距：</div>
+      <input
+        type="range"
+        id="colgapinput"
+        min="0"
+        max="40"
+        value="20"
+        class="span4"
+      />
+      <div id="colgap">0</div>
+      <div>行距：</div>
+      <input
+        type="range"
+        id="rowgapinput"
+        min="0"
+        max="40"
+        value="20"
+        class="span4"
+      />
+      <div id="rowgap">0</div>
+      <div>圆角：</div>
+      <input
+        type="range"
+        id="imgradiusinput"
+        min="0"
+        max="40"
+        value="20"
+        class="span4"
+      />
+      <div id="imgradius">0</div>
+      <div>边框：</div>
+      <input
+        type="range"
+        id="imgborderinput"
+        min="0"
+        max="5"
+        value="0"
+        class="span4"
+      />
+      <div id="imgborder">0</div>
+      <div>列数：</div>
+      <button id="colflex">纵向</button>
+      <input
+        type="range"
+        id="colcountinput"
+        min="1"
+        max="8"
+        value="4"
+        class="span3"
+      />
+      <div id="colcount">4</div>
+      <div>高度：</div>
+      <button id="rowflex">横向</button>
+      <input
+        type="range"
+        id="minheightinput"
+        min="100"
+        max="500"
+        value="300"
+        step="10"
+        class="span3"
+      />
+      <div id="minheight">250</div>
+      <div>总数：</div>
+      <div id="totalcount"></div>
+      <div>加载：</div>
+      <div id="loadedcount"></div>
+      <div>显示：</div>
+      <div id="showcount"></div>
+      <button id="loadall">加载</button>
+      <button id="pause">暂停</button>
+      <div>跳转：</div>
+      <input id="jumpTo" type="text" />
+      <div>每次：</div>
+      <input id="perload" type="text" value="25" />
+      <div>排序：</div>
+      <select id="sortby" class="span2">
+        <option value="default">默认</option>
+        <option value="lastModified">日期</option>
+        <option value="size">大小</option>
+      </select>
+      <select id="order" class="span2">
+        <option value="asc">升序</option>
+        <option value="desc">降序</option>
+      </select>
+      <button id="resort">重排</button>
+      <div>过滤：</div>
+      <button id="filtmono" class="span2">黑白漫画</button>
+      <button id="filtborder" class="span2">纯色边框</button>
+      <button id="revert">反转</button>
+      <div class="tip">
+        宽高：
+        <div class="tootip">
+          例：<br />
+          “16:9”表示宽高比等于16：9<br />
+          “16:9-”表示宽高比大于16：9<br />
+          “-16:9”表示宽高比小于16：9<br />
+          “4:3-16:9”表示宽高比在4:3到16：9之间<br />
+        </div>
+      </div>
+      <input type="text" id="aspectratio" class="span3" />
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
